@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis 15 Años - Luli Gabriela</title>
+    <!-- Fuentes para la invitación -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Pinyon Script (Elegante), Abhaya Libre (Texto), Dancing Script (Cursiva alternativa) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Pinyon+Script&family=Abhaya+Libre:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Pantalla Inicial / Sobre para activar la música -->
+    <div id="envelope-screen" class="envelope-screen" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/LuliXV(42).jpg');">
+        <div class="envelope-content">
+            <h2 class="pre-title">Mis 15 Años</h2>
+            <h1 class="main-title">Lourdith Gabriela</h1>
+            <p class="instruction"></p>
+            <button id="open-btn" class="open-btn">
+                <i class="fa-solid fa-envelope-open-text"></i>
+                ABRIR
+            </button>
+        </div>
+        <!-- Detalles de bordado superior e inferior -->
+        <div class="bordado top"></div>
+        <div class="bordado bottom"></div>
+    </div>
+
+    <!-- Contenedor principal de la invitación (oculto inicialmente) -->
+    <main id="invitation-content" class="invitation-content hidden">
+        <div class="side-image left">
+            <img src="assets/Imagen1.png" alt="Imagen lateral izquierda">
+        </div>
+        <div class="side-image right">
+            <img src="assets/Imagen2.png" alt="Imagen lateral derecha">
+        </div>
+
+        <!-- Botón flotante de música (Estilo pastilla) -->
+        <button id="music-toggle-btn" class="music-toggle-btn playing">
+            <span id="music-btn-text">DETENER</span>
+            <div class="equalizer">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </button>
+
+        <!-- Audio (controlado por JS) -->
+        <audio id="bg-music" loop>
+            <!-- Usaremos un mp3 de prueba, el usuario lo puede cambiar luego -->
+            <source src="assets/musica luli.MP3" type="audio/mpeg">
+
+        </audio>
+
+        <!-- Portada (Imagen a pantalla completa) -->
+        <section class="section hero-section"
+            style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0.8) 100%), url('assets/LuliXV(42).jpg');">
+            <div class="hero-content">
+              
+            </div>
+        </section>
+
+        <div class="letra-reflexiba">
+
+            <h1>La vida me ha regalado
+                quince años de experiencias,
+                sueños y momentos únicos.
+                Hoy comienza una nueva etapa
+                que deseo celebrar contigo,
+                rodeada de amor, sonrisas y
+                recuerdos inolvidables.
+                ¡Espero con emoción que me
+                acompañes a mis XV años!</h1>
+
+        </div>
+
+        <!-- Sección Evento Principal (Fecha y Cuenta Regresiva) -->
+        <section class="section main-event-section">
+            <div class="main-event-container">
+                <p class="mis-xv-text">¡Mis XV!</p>
+                <h1 class="elegant-name">Lourdith<br>Gabriela</h1>
+
+                <div class="date-display">
+                    <p class="day-text">Sábado</p>
+                    <p class="date-text">18 Julio 2026</p>
+                    <p class="time-text">02:00 pm</p>
+                </div>
+
+                <div id="countdown" class="countdown-display">
+                    <div class="time-box-pink"><span id="days">00</span>
+                        <p>Días</p>
+                    </div>
+                    <div class="time-box-pink"><span id="hours">00</span>
+                        <p>Horas</p>
+                    </div>
+                    <div class="time-box-pink"><span id="minutes">00</span>
+                        <p>Min.</p>
+                    </div>
+                    <div class="time-box-pink"><span id="seconds">00</span>
+                        <p>Seg.</p>
+                    </div>
+                </div>
+
+                <p class="highlight-text" style="margin-top: 2rem;">¡Te espero con mucha ilusión!</p>
+                <p class="intro-text">Tu presencia hará de este día un recuerdo inolvidable</p>
+            </div>
+        </section>
+
+        <!-- Sección Familia (Padres / Padrinos) -->
+        <section class="section family-section">
+            <div class="img-container">
+                <img src="assets/LuliXV(101).jpg" alt="imagen familia" class="luli-image">
+            </div>
+
+            <p class="intro-text">Con la bendición de Dios y el amor de mis padres:</p>
+            <h2 class="family-names"> Pedro Pablo Carranza Fuentes <br>y <br>
+                Judith Del Rosario Chablé Tec</h2>
+
+            <p class="intro-text" style="margin-top: 2rem;">Y mis padrinos:</p>
+            <h2 class="family-names"> Isidro Samuel Chablé May <br>y <br>Socorro de la A. Tec Cauich</h2>
+        </section>
+
+        <!-- Ubicación -->
+        <section class="section location-section">
+            <h2 class="section-title">¿Dónde?</h2>
+            <div class="card">
+                <img src="assets/Captura de pantalla 2026-05-05 171317.png" alt="iglesia" class="img-card">
+                <h1 class="card-title">Misa</h1>
+                <h3 class="card-title">Iglesia de San Francisco de Asís</h3>
+
+                <p class="card-text">Por 103 y 95, C. 60 749, Delio Moreno Cantón, 97270 Mérida, Yuc.</p>
+                <p class="card-text">Hora: 12:00 pm</p>
+                <a href="https://maps.app.goo.gl/4jthtZZGaGb22GxU7" target="_blank" class="primary-btn"><i
+                        class="fa-solid fa-map-location-dot"></i> Ver Mapa</a>
+            </div>
+        </section>
+
+        <section class="section location-section">
+
+            <div class="card">
+                <img src="assets/Captura de pantalla 2026-05-05 173912.png" alt="recepción" class="img-card">
+                <h1 class="card-title">Recepción</h1>
+                <h3 class="card-title">Villa MarOs</h3>
+                <p class="card-text">C. 115 535, Castilla Cámara, 97278 Mérida, Yuc.</p>
+                <p class="card-text">Hora: 02:00 pm</p>
+                <a href="https://maps.app.goo.gl/xmvugSr34AQ7GdYU8" target="_blank" class="primary-btn"><i
+                        class="fa-solid fa-map-location-dot"></i> Ver Mapa</a>
+            </div>
+        </section>
+
+
+        <!-- Código de Vestimenta -->
+        <section class="section dresscode-section">
+            <h2 class="section-title">Código de Vestimenta</h2>
+            <div class="card">
+                <h3 class="card-title highlight-text">Regional YUCATÁN</h3>
+                <p class="card-text">
+                </p>
+                <div class="dresscode-images">
+                    <img src="assets/21cbb44c-f757-43b9-9753-46d739e2dae1.jpg" alt="niña">
+                    <img src="assets/367504d6-e19b-4863-b32c-6f0ea052293d.jpg" alt="niño">
+                </div>
+            </div>
+        </section>
+
+        <!-- Mesa de Regalos / Lluvia de Sobres -->
+        <section class="section gifts-section">
+            <div class="card">
+                <div class="icon-gift"><i class="fa-solid fa-envelope-open-text"
+                        style="color: var(--secondary-color);"></i></div>
+                <h3 class="card-title">Lluvia de Sobres</h3>
+                <p class="card-text">Tu presencia es el regalo más bonito, pero si deseas obsequiarme algo, prefiero
+                    recibirlo en el evento en efectivo durante la lluvia de sobres que he preparado.</p>
+                <p class="card-text">O en mi mesa de regalos:</p>
+                <a href="https://www.chapur.com.mx/mesa-de-regalos/111680" target="_blank" class="secondary-btn"><i class="fa-solid fa-gift"></i> IR A MESA DE REGALOS</a>
+            </div>
+        </section>
+
+        <!-- Galería de Fotos -->
+        <section class="section gallery-section">
+            <h2 class="section-title">Mis Momentos</h2>
+            <div class="gallery-container">
+                <div class="gallery-slider">
+
+                    <img src="assets/LuliXV(22).jpg" alt="Foto Luli 2" class="gallery-img">
+                    <img src="assets/LuliXV(40).jpg" alt="Foto Luli 3" class="gallery-img">
+                    <img src="assets/LuliXV(158).jpg" alt="Foto Luli 9" class="gallery-img">
+                    <img src="assets/LuliXV(176).jpg" alt="Foto Luli 10" class="gallery-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Pases / RSVP -->
+        <section class="section pass-section">
+             <h2 class="pass-form-title">Confirma tu Asistencia</h2>
+            <div class="pass-card">
+                <div class="pass-image-wrapper">
+                    <img src="assets/LuliXV(126).jpg" alt="Foto Luli">
+                </div>
+
+                <h2 class="pass-name">Lourdith<br>Gabriela</h2>
+               
+                <p class="pass-text">Hemos reservado</p>
+                <div class="pass-number">1</div>
+                <p class="pass-text">Lugares para ti</p>
+
+                <p class="pass-footer">Pase único e intransferible</p>
+
+                <!-- Formulario simple para Nombre de Familia -->
+                <div class="pass-form">
+              
+                    <p class="pass-footer" style="margin-top: 0;">Por favor introduce nombre y apellido</p>
+                    <input type="text" id="familia-input" class="pass-input"
+                        placeholder="Escribe el nombre de tu familia">
+                    <button type="button" id="btn-confirmar" class="primary-btn whatsapp-btn">
+                        <i class="fa-brands fa-whatsapp"></i> CONFIRMAR ASISTENCIA
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Despedida -->
+        <section class="section footer-section">
+            <p class="highlight-text">¡Nos vemos pronto!</p>
+            <p class="intro-text">Agradezco de corazón que celebres conmigo</p>
+            <p class="subtitle">Con cariño,</p>
+            <h1 class="name-hero">Lourdith Gabriela</h1>
+            <h2 class="subtitle">Mis XV años</h2>
+        </section>
+
+        <div class="bordado-floral bottom-left"></div>
+        <div class="bordado-floral bottom-right"></div>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
